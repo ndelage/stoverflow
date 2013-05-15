@@ -7,7 +7,6 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -26,15 +25,17 @@ gem 'haml'
 gem 'sass'
 gem 'faker'
 
-group :test do
+group :test, :development do
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem 'haml'
+end
+
+group :test do
   gem 'capybara'
-  gem 'sass'
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
