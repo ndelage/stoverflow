@@ -1,6 +1,6 @@
-The Chefs
+#The Chefs
 
-Chris Torstenson - @ctorstens
-Pat Scanlan      - @patscan
-Michael Malchak  - @malchak
-Vincent Storme   - @vincentstorme
+- Chris Torstenson - @ctorstens
+- Pat Scanlan      - @patscan
+- Michael Malchak  - @malchak
+- Vincent Storme   - @vincentstorme
