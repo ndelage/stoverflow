@@ -49,4 +49,4 @@ end
 
 
 # User authentication
-gem 'devise'
+gem 'bcrypt-ruby'
