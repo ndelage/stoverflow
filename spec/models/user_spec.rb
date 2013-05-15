@@ -10,4 +10,7 @@ describe User do
   it 'has a name' do
     user.name.should == name
   end
+  it 'has an email' do
+    user.email.should == email
+  end
 end
