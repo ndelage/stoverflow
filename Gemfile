@@ -40,3 +40,7 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+
+# User authentication
+gem 'devise'
