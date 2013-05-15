@@ -11,20 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515182453) do
+ActiveRecord::Schema.define(:version => 20130515224727) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "questions", :force => true do |t|
     t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string "name",            :null => false
-    t.string "email",           :null => false
-    t.string "password_digest", :null => false
+    t.string   "name",            :null => false
+    t.string   "email",           :null => false
+    t.string   "password_digest", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "user_id"
+    t.integer  "value"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
