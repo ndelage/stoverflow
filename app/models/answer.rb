@@ -1,8 +1,8 @@
-class Question < ActiveRecord::Base
-  attr_accessible :title, :content
+class Answer < ActiveRecord::Base
+  attr_accessible :content
 
   # has_many :votes, :as => votable
 
-  validates :title, :content, :presence => true
+  validates :content, :presence => true
   
 end
