@@ -13,4 +13,8 @@ describe User do
   it 'has an email' do
     user.email.should == email
   end
+
+  it 'has a hashed password' do
+    user.password_digest.should == password
+  end
 end
