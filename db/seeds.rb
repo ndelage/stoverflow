@@ -4,7 +4,7 @@ NUMBER_QUESTIONS = 30
 NUMBER_ANSWERS = NUMBER_QUESTIONS * 3
 
 NUMBER_USERS.times do
-  User.create(:username => Faker::Internet.user_name,
+  User.create(:handle => Faker::Internet.user_name,
               :email => Faker::Internet.safe_email,
               :password => '123456')
 end
