@@ -18,4 +18,32 @@ describe QuestionsController do
     end
   end
 
+  describe "GET #new" do
+    it "should render the :new view" do
+      get :new
+      response.should render_template :new
+    end
+  end
+
+  # describe "POST #create" do
+  #   context "with valid attributes" do
+  #     it "should create a new question" do
+  #       expect{ post :create, question: { title: "asdasd", content: "ghhggh"} }.to change(Question, :count).by(1)
+  #     end
+  #   end
+
+    # context "with invalid attributes" do
+    #   it "should not create a new question" do
+    #     expect{ post :create, question: {title: "", content: ""} }.to_not change(Question, :count)
+    #   end
+    # end
+  # end
+
+  describe "GET #show" do
+    it "should render the :show view" do
+      get :show, id: @question
+      response.should render_template :show
+    end
+  end
+
 end
