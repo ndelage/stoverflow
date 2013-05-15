@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 gem 'haml'
 gem 'sass'
+gem 'faker'
 
 group :test, :development do
   gem 'factory_girl_rails'

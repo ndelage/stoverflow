@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  has_many :votes
+
   attr_accessible :name, :email, :password
 
   validates :name,     :presence => true
