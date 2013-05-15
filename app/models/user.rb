@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
 
-  def self.authenticate(username, password)
-    where(:handle => handle).try(:authenticate, password)
-  end
+  # def self.authenticate(username, password)
+  #   where(:handle => handle).try(:authenticate, password)
+  # end
 
 end

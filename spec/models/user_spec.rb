@@ -48,7 +48,10 @@ describe User do
 
   describe '#Authentication' do
     it 'checks the authentication of the user' do
-      User.authenticate(user.handle, 'blackbeard').should be_valid
+      user.authenticate('blackbeard').should be_true
+    end
+    it 'checks the authentication of a bad user' do
+      user.authenticate('NOT VALID PASSWORD').should be_false
     end
   end
 end
