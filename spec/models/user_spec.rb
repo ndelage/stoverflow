@@ -43,5 +43,12 @@ describe User do
     it 'validates the uniqueness of a bad email' do
       pending
     end
+
+  end
+
+  describe '#Authentication' do
+    it 'checks the authentication of the user' do
+      User.authenticate(user.name, 'blackbeard').should be_valid
+    end
   end
 end
