@@ -24,6 +24,7 @@ gem 'jquery-rails'
 
 gem 'haml'
 gem 'sass'
+gem 'faker'
 
 group :test do
   gem 'rspec-rails'
