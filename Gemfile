@@ -24,11 +24,13 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'sass'
 
-group :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'sass'
+group :test, :development do
   gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 # To use ActiveModel has_secure_password
