@@ -22,6 +22,9 @@ end
 
 gem 'jquery-rails'
 
+gem 'haml'
+gem 'sass'
+
 group :test do
   gem 'rspec-rails'
   gem 'haml'
