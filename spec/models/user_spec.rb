@@ -4,11 +4,11 @@ describe User do
   let(:user) { build(:user) }
 
   describe '#Validations' do
-    it 'validates the length of a good name' do
+    it 'validates the length of a good handle' do
       user.should be_valid
     end
-    it 'validates the length of a bad name' do
-      user = build(:user, :name => '')
+    it 'validates the length of a bad handle' do
+      user = build(:user, :handle => '')
       user.should_not be_valid
     end
 
@@ -48,7 +48,7 @@ describe User do
 
   describe '#Authentication' do
     it 'checks the authentication of the user' do
-      User.authenticate(user.name, 'blackbeard').should be_valid
+      User.authenticate(user.handle, 'blackbeard').should be_valid
     end
   end
 end
