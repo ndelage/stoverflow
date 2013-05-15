@@ -1,4 +1,7 @@
 Stoverflow::Application.routes.draw do
+  
+  match '/' => 'questions#index'
+  resources :questions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
