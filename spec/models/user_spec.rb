@@ -39,13 +39,9 @@ describe User do
   end
 
 
-  it 'validates the uniqueness of a good email' do
-    pending
-    user.should be_valid
-  end
   it 'validates the uniqueness of a bad email' do
-    create(:user, :email => 'MikeSmells')
-    user = build(:user, :email => 'MikeSmells')
-    user.should be_valid
+    build(:user, :email => 'PatSmells')
+    user = build(:user, :email => 'PatSmells')
+    user.should_not be_valid
   end
 end
