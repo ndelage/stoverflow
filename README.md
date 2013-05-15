@@ -21,7 +21,7 @@
 $ rails generate migration CreateAnswersTable
 ```
 
-##### ```xxxxCreateAnswersTable.rb```
+##### ```db/migrate/xxxxCreateAnswersTable.rb```
 ``` ruby
 class CreateAnswersTable < ActiveRecord::Migration
   def change
@@ -29,6 +29,8 @@ class CreateAnswersTable < ActiveRecord::Migration
       t.references :user
       t.references :question
       t.text :content
+
+      t.timestamps
     end
   end
 end
@@ -44,6 +46,8 @@ class CreateVotes < ActiveRecord::Migration
       t.references :votable, :polymorphic => true
       t.references :user
       t.integer :value
+
+      t.timestamps
     end
   end
 end
