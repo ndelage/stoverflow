@@ -11,7 +11,7 @@ describe QuestionsController do
       get :index
       assigns(:questions).should eq([@question])
     end
-    
+
     it "renders the :index view" do
       get :index
       response.should render_template :index
@@ -25,19 +25,19 @@ describe QuestionsController do
     end
   end
 
-  # describe "POST #create" do
-  #   context "with valid attributes" do
-  #     it "should create a new question" do
-  #       expect{ post :create, question: { title: "asdasd", content: "ghhggh"} }.to change(Question, :count).by(1)
-  #     end
-  #   end
+  describe "POST #create" do
+    context "with valid attributes" do
+      it "should create a new question" do
+        expect{ post :create, question: { title: "asdasd", content: "ghhggh"} }.to change(Question, :count).by(1)
+      end
+    end
 
-    # context "with invalid attributes" do
-    #   it "should not create a new question" do
-    #     expect{ post :create, question: {title: "", content: ""} }.to_not change(Question, :count)
-    #   end
-    # end
-  # end
+    context "with invalid attributes" do
+      it "should not create a new question" do
+        expect{ post :create, question: {title: "", content: ""} }.to_not change(Question, :count)
+      end
+    end
+  end
 
   describe "GET #show" do
     it "should render the :show view" do
@@ -46,4 +46,10 @@ describe QuestionsController do
     end
   end
 
+  describe "GET #edit" do
+    it "should render the :edit view" do
+      get :edit, id: @question
+      response.should render_template :edit
+    end
+  end
 end
