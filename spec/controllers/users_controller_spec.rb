@@ -10,8 +10,9 @@ describe UsersController do
   end
 
   describe '#create' do
+    let(:user) = User.new
+
     it 'renders the new template' do
-      pending
       post :create
       response.should render_template('create')
     end
