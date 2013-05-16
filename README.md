@@ -17,3 +17,4 @@
 ## References
 
 - [RoR Guides: polymorphic-associations](http://guides.rubyonrails.org/association_basics.html#polymorphic-associations)
+- [How I learned to test my Rails applications, Part 4: Controller specs](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html)
