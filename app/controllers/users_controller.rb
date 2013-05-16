@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    render :nothing => true
+    @user = User.new(params[:user])
+    @user.save
+    render text: ""
   end
 
   def show
