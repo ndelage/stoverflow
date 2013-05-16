@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 gem 'haml'
 gem 'sass'
+gem 'faker'
 
 gem 'debugger'
 group :test, :development do
