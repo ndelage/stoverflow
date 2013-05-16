@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'sass'
 
+gem 'debugger'
 group :test, :development do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
