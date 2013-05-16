@@ -6,15 +6,14 @@ class UsersController < ApplicationController
   def create
     user = User.new(params[:user])
     if user.save
-      redirect_to users_path(@user)
+      redirect_to users_path(@user.handle)
     else
       render :new
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.where(handle: params[:id]).first
   end
-
 
 end

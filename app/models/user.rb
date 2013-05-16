@@ -16,5 +16,8 @@ class User < ActiveRecord::Base
   validates :handle,   :length => { :minimum => 6, :maximum => 15 }
   validates :password, :length => { :minimum => 6 }
 
-  validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :handle, :format => { :with => /^[A-Za-z\d_]+$/}
+  validates :email,  :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :password, :format => { :with => /^[A-Za-z\d_]+$/}
+  
 end
