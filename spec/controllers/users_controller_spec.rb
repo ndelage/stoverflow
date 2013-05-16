@@ -18,7 +18,6 @@ describe UsersController do
         "password" => 'blackbeard' 
       }
     }
-
     it 'creates a new user' do
       User.should_receive(:new).with(params) { user }
       post :create, :user => params
