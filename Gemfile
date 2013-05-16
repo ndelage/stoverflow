@@ -23,12 +23,12 @@ gem 'jquery-rails'
 
 gem 'haml'
 gem 'sass'
-gem 'faker'
 
-gem 'debugger'
 group :test, :development do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'faker'
+  gem 'debugger'
 end
 
 group :test do
@@ -47,5 +47,3 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
