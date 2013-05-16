@@ -2,12 +2,10 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
-    # render params[:action] #'index'
   end
 
   def new
     @question = Question.new
-    # render params[:action] #'new'
   end
 
   def create
@@ -21,7 +19,6 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    # render params[:action] #'show'
   end
 
   def edit

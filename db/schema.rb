@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515224727) do
+ActiveRecord::Schema.define(:version => 20130516150524) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
     t.integer  "question_id"
-    t.text     "content"
+    t.text     "content",     :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "questions", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string   "title",      :null => false
+    t.text     "content",    :null => false
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -41,9 +41,11 @@ ActiveRecord::Schema.define(:version => 20130515224727) do
     t.integer  "votable_id"
     t.string   "votable_type"
     t.integer  "user_id"
-    t.integer  "value"
+    t.integer  "value",        :null => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "votes", ["user_id", "votable_type", "votable_id"], :name => "index_votes_on_user_id_and_votable_type_and_votable_id", :unique => true
 
 end

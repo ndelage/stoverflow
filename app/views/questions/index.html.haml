@@ -2,7 +2,17 @@
   Welcome to the Questions Page!
 
 - @questions.each do |question|
-  %p=question.title  
+  %p
+    Score:
+    =question.votes.count
+  %p=question.title.titleize  
   %p=question.content
+  %p
+    Written by 
+    =question.user.handle.titleize
+    Posted
+    =time_ago_in_words(question.created_at)
+    ago
+
   = link_to "Edit", edit_question_path(question)
   = link_to "Delete", question_path(question), :method => :delete

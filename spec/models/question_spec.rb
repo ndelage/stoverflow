@@ -23,12 +23,5 @@ describe Question do
     it "should not create a question instance given valid attributes" do
       bad_question.should_not be_valid
     end
-
-    it "should not reach the database" do
-      count = Question.all.count
-      Question.create(title: "", content: "")
-      Question.all.count.should eq count
-    end
-
   end
-end
+endgit 
