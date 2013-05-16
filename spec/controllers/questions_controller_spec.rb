@@ -49,7 +49,51 @@ describe QuestionsController do
   describe "GET #edit" do
     it "should render the :edit view" do
       get :edit, id: @question
+      puts Question.all
       response.should render_template :edit
     end
   end
+
+  describe "PUT #edit" do
+    it "should update the entry" do
+      put :update, id: @question, question: {title: "My first question", content: "Ready to answer?"}
+      @question.reload
+      @question.title.should eq("My first question")
+      @question.content.should eq("Ready to answer?")
+    end
+
+    it "should render the question page" do
+      put :update, id: @question, question: {title: "My first question", content: "Ready to answer?"}
+      response.should redirect_to @question      
+    end
+  end
+
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
