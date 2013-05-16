@@ -1,0 +1,12 @@
+%h2 Sign Up For Stoverflow
+
+= form_for @user do |f|
+  = f.label(:username)
+  = f.text_field(:handle, placeholder: 'eg. braveLittleToaster')
+
+  = f.label(:email)
+  = f.text_field(:email, placeholder: 'eg. toaster@email.com')
+  
+  = f.label(:password)
+  = f.text_field(:password, placeholder: 'eg. t0ast3d')
+  = f.submit('Sign Up')
