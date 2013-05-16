@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe QuestionsController do
-  #let(:question) { Question.create!(title: "Stuff", content: "Things are stuffs.") }
+
   before(:each) do
      @question = Question.create!(title: "Stuff", content: "Things are stuffs.")
   end
@@ -68,32 +68,17 @@ describe QuestionsController do
     end
   end
 
+  describe "PUT #destroy" do
+    it "should delete the entry" do
+      expect{
+        delete :destroy, id: @question
+        }.to change(Question, :count).by(-1)
+    end
+
+    it "should redirect to the index" do
+      delete :destroy, id: @question
+      response.should redirect_to questions_url 
+    end    
+  end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
