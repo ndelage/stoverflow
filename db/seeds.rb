@@ -1,30 +1,33 @@
 
-NUMBER_USERS = 1
-NUMBER_QUESTIONS = 0
+NUMBER_USERS = 20
+NUMBER_QUESTIONS = 2
 NUMBER_ANSWERS = NUMBER_QUESTIONS * 3
 
 NUMBER_USERS.times do
   User.create(
-    :handle => Faker::Internet.user_name,
-    :email => Faker::Internet.safe_email,
-    :password => '123456'
+    { :handle => Faker::Internet.user_name,
+      :email => Faker::Internet.safe_email,
+      :password => '123456'}, 
+      :without_protection => true
   )
 end
 users = User.all
 
 NUMBER_QUESTIONS.times do
   Question.create(
-    :user_id => users.sample.id,
-    :title => Faker::Company.catch_phrase,
-    :content => Faker::Company.bs
+     {:user => users.sample,
+      :title => Faker::Company.catch_phrase,
+      :content => Faker::Company.bs},
+      :without_protection => true
   )
 end
 questions = Question.all
 
 NUMBER_ANSWERS.times do
   Answer.create(
-    :content => Faker::Company.bs,
-    :question_id => questions.sample.id
+    {:content => Faker::Company.bs,
+        :question_id => questions.sample.id},
+        :without_protection => true
   )
 end
 answers = Answer.all
@@ -33,10 +36,10 @@ answers = Answer.all
 users.each do |user|
   questions.each do |question|
     Vote.create(
-      :user_id => user.id,
-      :votable_id => question.id,
-      # :votable_type => ,
-      :value => [-1,0,1,1,1].sample
+      {:user => user,
+            :votable => question,
+            :value => [-1,0,1,1,1].sample},
+            :without_protection => true
     )
   end
 end
@@ -45,10 +48,10 @@ end
 users.each do |user|
   answers.each do |answer|
     Vote.create(
-      :user_id => user.id,
-      :votable_id => answer.id,
-      # :votable_type => ,
-      :value => [-1,0,1,1,1].sample
+       {:user => user,
+        :votable => answer,
+        :value => [-1,0,1,1,1].sample},
+        :without_protection => true
     )
   end
 end

@@ -2,8 +2,10 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :votes
+  has_many :questions
+  has_many :answers
 
-  attr_accessible :handle, :email, :password
+  # attr_accessible :handle, :email, :password
 
   validates :handle,     :presence => true
   validates :email,    :presence => true
